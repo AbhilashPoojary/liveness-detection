@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>HumanCamJS — Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./demo.css" />
+</head>
+<body>
+  <div class="demo-shell">
+    <header class="demo-header">
+      <div class="demo-brand">
+        <span class="demo-brand-mark">◆</span>
+        <span>HumanCamJS</span>
+      </div>
+      <span class="demo-tag">Enterprise Webcam &amp; Passive Liveness SDK</span>
+    </header>
+
+    <main class="demo-main">
+      <section class="demo-camera-col">
+        <div id="camera" class="humancam-root"></div>
+        <div class="demo-controls">
+          <label class="demo-toggle">
+            <input type="checkbox" id="toggle-auto" checked />
+            Auto capture
+          </label>
+          <label class="demo-toggle">
+            <input type="checkbox" id="toggle-liveness" checked />
+            Passive liveness
+          </label>
+          <label class="demo-toggle">
+            <input type="checkbox" id="toggle-bestframe" checked />
+            Best frame
+          </label>
+          <button id="btn-restart" class="demo-btn">Restart session</button>
+        </div>
+      </section>
+
+      <section class="demo-result-col">
+        <h2 class="demo-panel-title">Capture Result</h2>
+        <div id="result-empty" class="demo-empty">
+          Waiting for a capture… align your face inside the guide.
+        </div>
+        <div id="result-panel" class="demo-result" hidden>
+          <img id="result-image" class="demo-result-image" alt="Captured face" />
+          <dl class="demo-metrics">
+            <div><dt>Quality score</dt><dd id="m-quality">—</dd></div>
+            <div><dt>Liveness score</dt><dd id="m-liveness">—</dd></div>
+            <div><dt>Face confidence</dt><dd id="m-confidence">—</dd></div>
+            <div><dt>Brightness</dt><dd id="m-brightness">—</dd></div>
+            <div><dt>Blur score</dt><dd id="m-blur">—</dd></div>
+            <div><dt>Yaw / Pitch / Roll</dt><dd id="m-pose">—</dd></div>
+            <div><dt>Resolution</dt><dd id="m-resolution">—</dd></div>
+            <div><dt>Timestamp</dt><dd id="m-timestamp">—</dd></div>
+          </dl>
+          <pre id="result-json" class="demo-json"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="demo-footer">
+      Runs 100% on-device — no backend, no frames ever leave the browser.
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

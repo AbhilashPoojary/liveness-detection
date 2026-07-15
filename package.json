@@ -1,0 +1,25 @@
+{
+  "name": "humancamjs",
+  "version": "1.0.0",
+  "description": "Enterprise webcam capture SDK with quality scoring, best-frame selection, and deterministic passive liveness checks. Built with Human.js and OpenCV.js.",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./styles": "./src/styles/humancam.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["webcam", "kyc", "liveness", "face-detection", "biometrics", "human.js", "opencv"],
+  "license": "MIT",
+  "dependencies": {
+    "@vladmandic/human": "^3.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
